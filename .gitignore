@@ -5,4 +5,4 @@ suggestion.py
 
 /Blog/__pycache__
 /Blog/migrations
-/Blog/test.py
+/Blog/tests.py
