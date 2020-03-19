@@ -1,0 +1,8 @@
+.git
+.idea
+__pycache__
+suggestion.py
+
+/Blog/__pycache__
+/Blog/migrations
+/Blog/test.py
