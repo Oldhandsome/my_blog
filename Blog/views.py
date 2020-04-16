@@ -1,10 +1,13 @@
+import os
+
 from django.utils.decorators import method_decorator
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from captcha.views import CaptchaStore
 from captcha.views import captcha_image
-from time import time
+from time import time, strftime, localtime
 import base64
+from uuid import uuid4
 
 from .models import Blog
 from .models import Tag
@@ -112,8 +115,8 @@ class DetailedBlogView(APIView):
         ser_obj = BlogModelSerializer(data=blog)
         if ser_obj.is_valid():
             ser_obj.save()
-            ES().create_blog(blog_id=ser_obj.data.get("id"),
-                             new_blog={"title": ser_obj.data.get("title"), "text": ser_obj.data.get("text")})
+            ES().create_blog(blog_id=ser_obj.data.get("id"), #ser_obj.data.get("text")
+                             new_blog={"title": ser_obj.data.get("title"), "text": ""})
             return Response({"code": 1000, "data": ser_obj.data.get("id"), "message": None})
         return Response({"code": 1001, "data": None, "message": "未成功创建"})
 
@@ -247,7 +250,6 @@ class UserView(APIView):
     @method_decorator(authenticate_user)
     def put(self, request):
 
-        print(request.data)
         try:
             email = request.data.get("email")
             user = User.objects.filter(email=email)[0]
@@ -279,12 +281,17 @@ class AuthenticationView(APIView):
 
 class ImgUpload(APIView):
 
+    @method_decorator(authenticate_user)
     def post(self, request):
-        print(request.data)
-        print(type(request.FILES.get("file")))
-        print(request.FILES.get("file").__dict__)
+        uid = uuid4()
+        c_time = strftime("%Y-%m-%d", localtime())
+        img = request.data.get("img")
+        img_type = img.content_type.split("/")[1]
+        img_path = os.path.join("media", "blog", "img", c_time, "%s.%s" % (uid, img_type))
+        if not os.path.isdir(os.path.dirname(img_path)):
+            os.makedirs(img_path)
+        with open(img_path, "wb") as f:
+            for chunk in img.chunks():
+                f.write(chunk)
 
-        img = request.FILES.get("file")
-        print(img.name, img.size)
-
-        return Response({"code": 1011, "data": "OK", "message": "上传成功！"})
+        return Response({"code": 1011, "data": {"img_path": img_path.replace("\\", "/")}, "message": "上传成功！"})

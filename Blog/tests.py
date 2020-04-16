@@ -1,5 +1,8 @@
 # Create your tests here.
+import base64
 import os
+import uuid
+
 import django
 from django.test import TestCase
 
@@ -309,9 +312,24 @@ from Blog.models import Blog
 
 
 if __name__ == '__main__':
-    es = Elasticsearch()
+    uid = uuid.uuid4()
+    c_time = time.strftime("%Y-%m-%d", time.localtime())
+    img_type = "png"
+    from django.conf import settings
+
+    # img_path = +"/media/blog/img/%s/%s.%s" % (c_time, )
+    img_path = os.path.join(settings.BASE_DIR, "media", "blog", 'img', c_time)
+    if not os.path.isdir(img_path):
+        os.makedirs(img_path)
+    # print(os.path.join(img_path, "%s.%s" %(uid,img_type)))
+    with open(os.path.join(img_path, "%s.%s" % (uid, img_type)), "wb") as f:
+        f.write(base64.b64encode(img.encode("utf-8")))
+    # with open(img_path, "wb") as f:
+    #     f.write(base64.b64decode(img.encode()))
+
+    # es = Elasticsearch()
     # print(es.ping())
-    print(es.indices.exists("blog"))
+    # print(es.indices.exists("blog"))
     # body = {
     #     "mappings": {
     #         "properties": {
@@ -396,4 +414,4 @@ if __name__ == '__main__':
     # result = es.update(index="blog", id=99, body=updated_blog, filter_path=["_shards.successful"])
     # print(result['_shards']['successful'])
     # print(es.get(index="blog", id=99))
-    es.get(index="blog",id=99)
+    # es.get(index="blog",id=99)

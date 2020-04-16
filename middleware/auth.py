@@ -20,7 +20,7 @@ class MyAuth(authentication.BaseAuthentication):
         except jwt.InvalidTokenError:
             raise AuthenticationFailed({"code": 1005, "data": None, "message": "token非法"})
         # 认证通过
-        # request.use = payload,request.auth = token
+        # request.user = payload,request.auth = token
         return payload, token
 
 

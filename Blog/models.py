@@ -15,7 +15,7 @@ class Type(models.Model):
 class Blog(models.Model):
     """table of Blog"""
     title = models.CharField(max_length=100, verbose_name="标题")
-    text = models.TextField(verbose_name="正文")
+    text = models.TextField(verbose_name="正文", null=True)
     type = models.ForeignKey(to="Type", verbose_name="文章的类别", on_delete=models.PROTECT)
     view_times = models.IntegerField(default=0, verbose_name="浏览人数")
     ARTICLE_TYPE = ((1, "公开"), (2, "私密"))

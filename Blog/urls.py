@@ -23,5 +23,5 @@ urlpatterns = [
     path("user/", UserView.as_view()),
     path("get_validate_code/", AuthenticationView.as_view()),
 
-    path("blog/img/upload/", ImgUpload.as_view()),
+    path("blog/img/", ImgUpload.as_view()),
 ]

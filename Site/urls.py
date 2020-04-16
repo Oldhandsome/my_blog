@@ -23,6 +23,5 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('app01/', include('Blog.urls')),
-
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
 ]

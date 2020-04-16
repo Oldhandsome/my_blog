@@ -75,7 +75,7 @@ class ES(object):
     def init_es_blog(self):
         if self.es.ping():
             if self.es.indices.exists("blog"):
-                self.es.indices.delete(index="blog")
+                return
             body = {
                 "mappings": {
                     "properties": {
@@ -103,7 +103,7 @@ class ES(object):
     def init_es_suggestion(self):
         if self.es.ping():
             if self.es.indices.exists("suggestion_db"):
-                self.es.indices.delete(index="suggestion_db")
+                return
             body = {
                 "mappings": {
                     "properties": {
