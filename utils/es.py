@@ -1,10 +1,19 @@
 from elasticsearch import Elasticsearch
 from Blog.models import Blog
 from elasticsearch import helpers
+from django.conf import settings
 
 
 class ES(object):
     es = Elasticsearch()
+
+    @classmethod
+    def run_shell(cls):
+        import subprocess
+        import platform
+        if platform.system() == "Windows":
+            if not cls.es.ping():
+                subprocess.Popen("cmd.exe /c start " + settings.ES_LOCATION, shell=True)
 
     def create_blog(self, blog_id, new_blog):
         self.es.create(index="blog", id=blog_id, body=new_blog)
@@ -40,8 +49,8 @@ class ES(object):
                 }
             },
             "highlight": {
-                "pre_tags": '<u style="color:red;">',
-                "post_tags": "</u>",
+                "pre_tags": '<u style="color:red;"><i>',
+                "post_tags": "</i></u>",
                 "fields": {
                     "title": {"number_of_fragments": 1, "no_match_size": 50},
                     "text": {"number_of_fragments": 1, "no_match_size": 50}

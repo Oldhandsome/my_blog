@@ -25,7 +25,8 @@ from utils.token import create_token
 from middleware.auth import MyAuth
 from utils.es import ES
 from middleware.auth import authenticate_user
-
+import logging
+logger = logging.getLogger()
 
 # code 1000 请求成功
 # code 1001 请求失败
@@ -38,6 +39,8 @@ from middleware.auth import authenticate_user
 # code 1010 验证码过期
 # code 1011 图片上传成功
 # code 1011 图片上传失败
+# code 1012 图片删除成功
+# code 1013 图片删除失败
 class TokenView(APIView):
     def get(self, request):
         ip = request.META.get("REMOTE_ADDR")
@@ -115,8 +118,8 @@ class DetailedBlogView(APIView):
         ser_obj = BlogModelSerializer(data=blog)
         if ser_obj.is_valid():
             ser_obj.save()
-            ES().create_blog(blog_id=ser_obj.data.get("id"), #ser_obj.data.get("text")
-                             new_blog={"title": ser_obj.data.get("title"), "text": ""})
+            ES().create_blog(blog_id=ser_obj.data.get("id"),  # ser_obj.data.get("text")
+                             new_blog={"title": ser_obj.data.get("title"), "text": "请输入博客内容~~~"})
             return Response({"code": 1000, "data": ser_obj.data.get("id"), "message": None})
         return Response({"code": 1001, "data": None, "message": "未成功创建"})
 
@@ -135,10 +138,11 @@ class DetailedBlogView(APIView):
         ser_obj = BlogModelSerializer(instance=query_set, data=blog, partial=True)
         if ser_obj.is_valid():
             ser_obj.save()
-            ES().update_blog(blog_id=ser_obj.data.get("id"), blog_obj={
-                "title": ser_obj.data.get("title"),
-                "text": ser_obj.data.get("text")
-            })
+            if updated_type == 1:
+                ES().update_blog(blog_id=ser_obj.data.get("id"), blog_obj={
+                    "title": ser_obj.data.get("title"),
+                    "text": ser_obj.data.get("text")
+                })
             return Response({"code": 1000, "data": None, "message": "修改博客成功"})
         return Response({"code": 1001, "data": None, "message": "未能成功修改博客"})
 
@@ -289,9 +293,18 @@ class ImgUpload(APIView):
         img_type = img.content_type.split("/")[1]
         img_path = os.path.join("media", "blog", "img", c_time, "%s.%s" % (uid, img_type))
         if not os.path.isdir(os.path.dirname(img_path)):
-            os.makedirs(img_path)
+            os.makedirs(os.path.dirname(img_path))
         with open(img_path, "wb") as f:
             for chunk in img.chunks():
                 f.write(chunk)
 
         return Response({"code": 1011, "data": {"img_path": img_path.replace("\\", "/")}, "message": "上传成功！"})
+
+    @method_decorator(authenticate_user)
+    def delete(self, request):
+        img_path = request.data.get("img_path")
+        try:
+            os.remove(img_path)
+        except Exception as e:
+            pass
+        return Response({"code": 1013, "data": None, "message": "图片删除成功"})

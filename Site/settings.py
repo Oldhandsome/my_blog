@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'avi(us%6d!^6e1$cw%(wlv)22_$4e(jt@@1n-53m1l$ycxxg6c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -118,7 +118,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     "DATETIME_FORMAT": "%Y-%m-%d",
     # %H:%M
@@ -136,3 +135,91 @@ CAPTCHA_IMAGE_SIZE = (100, 40)
 CAPTCHA_LENGTH = 4
 # 超时(minutes)
 CAPTCHA_TIMEOUT = 3
+
+ES_LOCATION = "D:\\program_files\\elasticsearch-7.3.2\\bin\\elasticsearch.bat"
+
+# 日志系统
+BASE_LOG_DIR = os.path.join(BASE_DIR, "log")
+LOGGING = {
+    'version': 1,
+    # 是否禁用Django开发时 已经存在的logger实例
+    'disable_existing_loggers': False,
+    'formatters': {
+        # 标准格式
+        'standard': {
+            'format': '[%(asctime)s][%(threadName)s:%(thread)d][task_id:%(name)s][%(filename)s:%(lineno)d]'
+                      '[%(levelname)s][%(message)s]'
+        },
+        # 简单格式
+        'simple': {
+            'format': '[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d]%(message)s'
+        },
+        # 收集信息的格式
+        'collect': {
+            'format': '%(message)s'
+        }
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        # 在终端输出的形式 的处理器
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],  # 只有在Django debug为True时才在屏幕打印日志
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'TF': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',  # 保存到文件，根据时间自动切
+            'filename': os.path.join(BASE_LOG_DIR, "info", "info.log"),  # 日志文件
+            'backupCount': 3,  # 备份数为3  xx.log --> xx.log.2018-08-23_00-00-00 --> xx.log.2018-08-24_00-00-00 --> ...
+            'when': 'D',  # 每天一切， 可选值有S/秒 M/分 H/小时 D/天 W0-W6/周(0=周一) midnight/如果没指定时间就默认在午夜
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+        'TW': {
+            'level': 'WARNING',
+            'class': 'logging.handlers.TimedRotatingFileHandler',  # 保存到文件，根据时间自动切
+            'filename': os.path.join(BASE_LOG_DIR, "warn", "warn.log"),  # 日志文件
+            'backupCount': 3,  # 备份数为3  xx.log --> xx.log.2018-08-23_00-00-00 --> xx.log.2018-08-24_00-00-00 --> ...
+            'when': 'D',  # 每天一切， 可选值有S/秒 M/分 H/小时 D/天 W0-W6/周(0=周一) midnight/如果没指定时间就默认在午夜
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+        'error': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',  # 保存到文件，自动切
+            'filename': os.path.join(BASE_LOG_DIR, "error", "err.log"),  # 日志文件
+            'maxBytes': 1024 * 1024 * 5,  # 日志大小 50M
+            'backupCount': 5,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+        'collect': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',  # 保存到文件，自动切
+            'filename': os.path.join(BASE_LOG_DIR, "collect", "collect.log"),
+            'maxBytes': 1024 * 1024 * 50,  # 日志大小 50M
+            'backupCount': 5,
+            'formatter': 'collect',
+            'encoding': "utf-8"
+        }
+    },
+    'loggers': {
+        # 若名字不是 collect 则配置信息全部如下
+        '': {  # 默认的logger应用如下配置
+            'handlers': ['TF', 'TW', 'console', 'error'],  # 上线之后可以把'console'移除
+            'level': 'DEBUG',
+            'propagate': True,  # 是否向上传递日志流
+        },
+        # 若名字是 collect 则配置信息全部如下
+        'collect': {  # 名为 'collect'的logger还单独处理
+            'handlers': ['console', 'collect'],
+            'level': 'INFO',
+        }
+    },
+}

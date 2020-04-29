@@ -6,6 +6,7 @@ class BlogConfig(AppConfig):
 
     def ready(self):
         from utils.es import ES
-        ES().init_es_blog()
-        ES().init_es_suggestion()
-        pass
+        ES.run_shell()
+        es = ES()
+        es.init_es_blog()
+        es.init_es_suggestion()

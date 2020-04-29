@@ -274,29 +274,32 @@ from Blog.models import Blog
 #             print(i)
 #
 #
-# if __name__ == '__main__':
-#     # TestBlog().getDetailBlog()
-#     # TestBlog().getBlogList(1);
-#     blog = {
-#         "id": 10,
-#         "text": "1Django之CBV123456",
-#     }
-#     TestBlog().update_blog_attr(blog)
-#     blog = Blog.objects.get(id=10)
-#
-#     # print(blog.tag.all())
-#     print("内容是", blog.text)
-#
-#     blog = {
-#         'title': 'DRF之路由封装',
-#         'type': 1,
-#         'tag_list': [1, 2, 3],
-#         'article_type': 1,
-#         'text': "猜猜我是谁",
-#         'user': 1,
-#         'view_times': 0,
-#     }
-#     TestBlog().add_blog(blog)
+if __name__ == '__main__':
+    # TestBlog().getDetailBlog()
+    # TestBlog().getBlogList(1);
+    # blog = {
+    #     "id": 10,
+    #     "text": "1Django之CBV123456",
+    # }
+    # TestBlog().update_blog_attr(blog)
+    # blog = Blog.objects.get(id=10)
+    #
+    # # print(blog.tag.all())
+    # print("内容是", blog.text)
+    #
+    # blog = {
+    #     'title': 'DRF之路由封装',
+    #     'type': 1,
+    #     'tag_list': [1, 2, 3],
+    #     'article_type': 1,
+    #     'text': "猜猜我是谁",
+    #     'user': 1,
+    #     'view_times': 0,
+    # }
+    # TestBlog().add_blog(blog)
+    tags = Tag.objects.all()
+    for tag in tags:
+        print(tag)
 
 # blog = {
 #     'id': 8,
@@ -311,19 +314,19 @@ from Blog.models import Blog
 # TestBlog().update_blog(blog)
 
 
-if __name__ == '__main__':
-    uid = uuid.uuid4()
-    c_time = time.strftime("%Y-%m-%d", time.localtime())
-    img_type = "png"
-    from django.conf import settings
-
-    # img_path = +"/media/blog/img/%s/%s.%s" % (c_time, )
-    img_path = os.path.join(settings.BASE_DIR, "media", "blog", 'img', c_time)
-    if not os.path.isdir(img_path):
-        os.makedirs(img_path)
-    # print(os.path.join(img_path, "%s.%s" %(uid,img_type)))
-    with open(os.path.join(img_path, "%s.%s" % (uid, img_type)), "wb") as f:
-        f.write(base64.b64encode(img.encode("utf-8")))
+# if __name__ == '__main__':
+#     uid = uuid.uuid4()
+#     c_time = time.strftime("%Y-%m-%d", time.localtime())
+#     img_type = "png"
+#     from django.conf import settings
+#
+#     # img_path = +"/media/blog/img/%s/%s.%s" % (c_time, )
+#     img_path = os.path.join(settings.BASE_DIR, "media", "blog", 'img', c_time)
+#     if not os.path.isdir(img_path):
+#         os.makedirs(img_path)
+#     # print(os.path.join(img_path, "%s.%s" %(uid,img_type)))
+#     with open(os.path.join(img_path, "%s.%s" % (uid, img_type)), "wb") as f:
+#         f.write(base64.b64encode(img.encode("utf-8")))
     # with open(img_path, "wb") as f:
     #     f.write(base64.b64decode(img.encode()))
 

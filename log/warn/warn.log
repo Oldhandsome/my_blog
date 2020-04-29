@@ -1,0 +1,983 @@
+[2020-04-28 23:02:57,874][Thread-12:20252][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/bloglist/]
+[2020-04-29 08:55:45,972][MainThread:12232][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.072s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000018860E30CC8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 08:55:50,064][MainThread:12232][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.083s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000018860E49B08>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 08:56:05,142][MainThread:13956][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.070s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000015AFE508248>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 08:56:09,211][MainThread:13956][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.068s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000015AFE5220C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 08:57:16,446][MainThread:6288][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.093s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000020015EF8388>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 08:57:20,543][MainThread:6288][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.098s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000020015F12188>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 09:03:47,574][MainThread:9596][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.110s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017E67A08248>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 09:03:51,668][MainThread:9596][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.093s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017E67A22048>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 09:03:55,738][MainThread:9596][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.071s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017E67A8B4C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 09:35:48,832][Thread-1:6260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:35:53,716][Thread-1:6260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:37:54,969][Thread-1:6260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:38:02,270][Thread-1:6260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:39:45,295][Thread-1:6260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:40:47,383][Thread-1:6260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:48:11,458][Thread-11:14260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:51:23,858][Thread-11:14260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:51:42,465][Thread-11:14260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:52:52,595][Thread-11:14260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 09:53:12,185][Thread-11:14260][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 10:06:23,344][Thread-15:12328][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 10:06:37,777][Thread-15:12328][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 10:07:15,951][Thread-15:12328][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 10:09:59,505][Thread-15:12328][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 10:11:40,632][Thread-15:12328][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 10:17:59,337][Thread-19:5428][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 10:42:05,055][Thread-19:5428][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 11:19:25,028][Thread-1:2528][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 11:19:32,291][Thread-1:2528][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 12:07:32,414][Thread-5:14000][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 12:26:00,194][Thread-10:15416][task_id:django.request][log.py:228][WARNING][Forbidden: /app01/blog/]
+[2020-04-29 12:54:21,317][MainThread:13208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.030s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000179D6D829C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:25,349][MainThread:13208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.027s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000179D6D9C848>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:29,368][MainThread:13208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.017s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000179D6E01CC8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:33,398][MainThread:13208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.029s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000179D6E0B488>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:37,428][MainThread:13208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.025s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000179D6E0BE48>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:41,436][MainThread:13208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.007s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000179D6E11548>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:49,071][MainThread:3208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.031s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000156551E3848>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:53,092][MainThread:3208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.019s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000156551FD6C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:54:57,112][MainThread:3208][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.018s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000015655264B48>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:55:06,808][MainThread:4512][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.030s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000231BD133808>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:55:10,840][MainThread:4512][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.026s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000231BD14D688>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:55:14,869][MainThread:4512][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.028s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000231BD1B4A88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:55:18,899][MainThread:4512][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.028s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000231BD1BD248>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:55:22,924][MainThread:4512][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.022s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000231BD1BDA88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+[2020-04-29 12:55:26,946][MainThread:4512][task_id:elasticsearch][base.py:150][WARNING][HEAD http://localhost:9200/ [status:N/A request:4.021s]]
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 242, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\util\retry.py", line 376, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
+    raise value
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "d:\program_files\python3.7.6\lib\http\client.py", line 966, in send
+    self.connect()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\program_files\py_virtual_envs\env_myblog\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000231BD1C12C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。

@@ -1,8 +1,18 @@
 # from django.core.signals import request_finished #请求到来前
 # from django.core.signals import request_started # 请求到来后
 # from django.core.signals import got_request_exception #请求异常
-# from django.db.models import signals
 # from django.core import signals
+#
+# from django.db.models.signals import class_prepared
+# from django.db.models.signals import pre_init, post_init
+# from django.db.models.signals import pre_save, post_save
+# from django.db.models.signals import pre_delete, post_delete
+# from django.db.models.signals import pre_save, post_save
+# from django.db.models.signals import pre_migrate, post_migrate
+# from django.db.models.signals import m2m_changed
+#
+# from django.test.signals import setting_changed
+# from django.test.signals import template_rendered
 # from django.db.utils import ConnectionHandler
 
 # connections = ConnectionHandler()
