@@ -10,3 +10,4 @@ class BlogConfig(AppConfig):
         es = ES()
         es.init_es_blog()
         es.init_es_suggestion()
+        pass

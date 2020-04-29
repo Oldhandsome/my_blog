@@ -22,17 +22,19 @@ from .modelserializer import UserModelSerializer
 
 from utils.mypaginator import MyPaginator
 from utils.token import create_token
-from middleware.auth import MyAuth
 from utils.es import ES
 from middleware.auth import authenticate_user
 import logging
+
 logger = logging.getLogger()
+
 
 # code 1000 请求成功
 # code 1001 请求失败
-# code 1003 x-token失效
-# code 1004 x-token认证失败
-# code 1005 x-token非法
+# code 1002 token 即将过期
+# code 1003 token失效
+# code 1004 token认证失败
+# code 1005 token非法
 # code 1007 邮箱不存在或是密码不正确
 # code 1008 验证码未通过
 # code 1009 验证通过
@@ -41,16 +43,15 @@ logger = logging.getLogger()
 # code 1011 图片上传失败
 # code 1012 图片删除成功
 # code 1013 图片删除失败
-class TokenView(APIView):
-    def get(self, request):
-        ip = request.META.get("REMOTE_ADDR")
-        token = create_token({'ip': ip}, exp=30)
-        return Response({"code": 1000, 'data': token, "message": None})
+# class TokenView(APIView):
+#     def get(self, request):
+#         ip = request.META.get("REMOTE_ADDR")
+#         token = create_token({'ip': ip}, exp=30)
+#         return Response({"code": 1000, 'data': token, "message": None})
 
 
 class AllBlogListView(APIView):
     """获得全部的blog"""
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         email = request.query_params.get("email", "over_flowing@163.com")
@@ -67,7 +68,6 @@ class AllBlogListView(APIView):
 
 
 class TypeView(APIView):
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         query_set = Type.objects.all()
@@ -101,7 +101,6 @@ class TypeView(APIView):
 
 
 class DetailedBlogView(APIView):
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         uid = request.query_params.get("id")
@@ -158,7 +157,6 @@ class DetailedBlogView(APIView):
 
 class TagListView(APIView):
     """获得标签列表"""
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         email = request.query_params.get("email", "over_flowing@163.com")
@@ -169,7 +167,6 @@ class TagListView(APIView):
 
 class TagView(APIView):
     """根据tag_id 拿到博客"""
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         t_id = request.query_params.get("t_id")
@@ -204,7 +201,6 @@ class TagView(APIView):
 
 
 class SearchView(APIView):
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         word = request.query_params.get("word")
@@ -221,7 +217,6 @@ class SearchView(APIView):
 
 
 class UserView(APIView):
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         email = request.query_params.get("email")
@@ -248,12 +243,13 @@ class UserView(APIView):
                 return Response({"code": 1007, "data": None, "message": "邮箱或密码不正确！"})
         except IndexError:
             return Response({"code": 1007, "data": None, "message": "邮箱或密码不正确！"})
+        # 更新 登录时间
+        user.save()
         token = create_token({'email': email}, exp=60)
         return Response({"code": 1009, 'data': {"token": token, "uid": user.id}, "message": None})
 
     @method_decorator(authenticate_user)
     def put(self, request):
-
         try:
             email = request.data.get("email")
             user = User.objects.filter(email=email)[0]
@@ -267,7 +263,6 @@ class UserView(APIView):
 
 class AuthenticationView(APIView):
     """获取验证码"""
-    authentication_classes = [MyAuth, ]
 
     def get(self, request):
         hashkey = CaptchaStore.generate_key()
@@ -306,5 +301,5 @@ class ImgUpload(APIView):
         try:
             os.remove(img_path)
         except Exception as e:
-            pass
+            logger.error(e)
         return Response({"code": 1013, "data": None, "message": "图片删除成功"})

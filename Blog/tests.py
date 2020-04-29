@@ -297,10 +297,10 @@ if __name__ == '__main__':
     #     'view_times': 0,
     # }
     # TestBlog().add_blog(blog)
-    tags = Tag.objects.all()
-    for tag in tags:
-        print(tag)
-
+    from datetime import datetime
+    user = User.objects.get(id=1)
+    user.password = "77058@cc"
+    user.save()
 # blog = {
 #     'id': 8,
 #     'tag_list': [1,2],
